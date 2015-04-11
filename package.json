@@ -15,13 +15,17 @@
   "license": "APACHE",
   "devDependencies": {
     "del": "^1.1.1",
+    "event-stream": "^3.2.2",
     "gulp": "^3.8.10",
+    "gulp-add-src": "^0.2.0",
     "gulp-angular-filesort": "^1.0.4",
     "gulp-concat": "^2.4.3",
     "gulp-copy": "0.0.2",
     "gulp-html2js": "^0.2.0",
     "gulp-inject": "^1.1.1",
     "gulp-less": "^2.0.1",
+    "gulp-strip-comments": "^1.0.1",
+    "gulp-util": "^3.0.3",
     "run-sequence": "^1.0.2",
     "vinyl-paths": "^1.0.0"
   }

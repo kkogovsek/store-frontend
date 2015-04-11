@@ -1,12 +1,20 @@
-angular.module('phonecatApp', [])
+angular.module('appModule', [
+	'templates',
+	'ui.router',
+	'store.login',
+	'store.buy'
+])
 
-.controller('PhoneListCtrl', function ($scope) {
-  $scope.phones = [
-    {'name': 'Nexus S',
-     'snippet': 'Fast just got faster with Nexus S.'},
-    {'name': 'Motorola XOOM™ with Wi-Fi',
-     'snippet': 'The Next, Next Generation tablet.'},
-    {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
-  ];
-});
+
+.config( ['$stateProvider', '$urlRouterProvider',function myAppConfig ( $stateProvider, $urlRouterProvider ) {
+	$urlRouterProvider.otherwise( '/home' );
+}])
+
+.controller( 'MainController', ['$scope', '$location',function AppCtrl ( $scope, $location ) {
+	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+		if ( angular.isDefined( toState.data.pageTitle ) ) {
+			$scope.pageTitle = toState.data.pageTitle + ' | Store' ;
+		}
+	});
+}])
+;

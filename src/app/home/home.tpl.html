@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="well well-md">
+				<ul>
+					<li>
+						<input type="text" ng-model="selected.name" class="form-control" placeholder="Search query"/>
+					</li>
+					<li>
+						<a class="label label-default" ng-if="selected.category" ng-click="selected.category=undefined">Clear selection</a>
+					</li>
+					<li class="" ng-repeat="category in categories">
+						<a class="label label-info" ng-click="selected.category=category.name;">{{category.name}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="items col-sm-9">
+			<div class="row items">
+				<div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="item in items | filter:{name:selected.name,category:selected.category}">
+					<div class="well well-md item">
+						<img src="{{item.src}}" alt="" class="item-img">
+						<h4><a ng-click="openItem(item)">{{item.name}}</a></h4>
+						<h5>5€</h5>
+						<span class="label label-success">
+							{{item.category}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

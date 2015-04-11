@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="appModule" ng-controller="MainController">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -7,13 +7,9 @@
 	<!-- endinject-->
 	
 </head>
-<body ng-controller="PhoneListCtrl">
-	<ul>
-		<li ng-repeat="phone in phones">
-			<span>{{phone.name}}</span>
-			<p>{{phone.snippet}}</p>
-		</li>
-	</ul>
+<body>
+	<div class="" ui-view="navbar"></div>
+	<div ui-view="body"></div>	
 
 	<!-- inject:js-->
 	<!-- endinject-->
